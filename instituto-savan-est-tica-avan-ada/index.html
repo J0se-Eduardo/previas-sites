@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instituto Savan Estética Avançada</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1A4B8C;
+  --primary-dark: #122f5a;
+  --primary-light: #e8f0fb;
+  --accent: #2ECC71;
+  --accent-dark: #27ae60;
+  --white: #ffffff;
+  --light-gray: #f4f6fa;
+  --text-dark: #1a1a2e;
+  --text-mid: #3a4a6b;
+  --text-light: #6b7a99;
+  --gold: #D4A017;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+/* =========== NAVBAR =========== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(18, 47, 90, 0.97);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+.nav-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--white);
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.nav-brand span {
+  display: block;
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* =========== HERO =========== */
+#inicio {
+  height: 100vh;
+  min-height: 560px;
+  background-image: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,25,55,0.72), rgba(10,25,55,0.52));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-pretitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.12;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  max-width: 820px;
+}
+
+.hero-tagline {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 38px;
+  max-width: 540px;
+  letter-spacing: 0.02em;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 18px rgba(46,204,113,0.38);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(46,204,113,0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.85);
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* =========== SECTION COMMONS =========== */
+section {
+  padding: 88px 32px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  line-height: 1.18;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  font-weight: 400;
+  max-width: 560px;
+  margin-bottom: 52px;
+}
+
+.divider {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+
+/* =========== GALERIA =========== */
+#galeria {
+  background: var(--light-gray);
+  padding-top: 80px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(26,75,140,0.1);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+  transform: scale(1.03);
+}
+
+/* =========== SOBRE =========== */
+#sobre {
+  background: var(--white);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.sobre-text p {
+  color: var(--text-mid);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.sobre-text p:last-child { margin-bottom: 0; }
+
+.sobre-nums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.num-card {
+  background: var(--primary-light);
+  border-radius: 14px;
+  padding: 28px 22px;
+  text-align: center;
+  border-top: 4px solid var(--primary);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.num-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(26,75,140,0.13);
+}
+
+.num-card .num {
+  font-family: 'Lato', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  display: block;
+}
+
+.num-card .num-label {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+  display: block;
+}
+
+/* =========== SERVIÇOS =========== */
+#cardapio {
+  background: var(--light-gray);
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.servico-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-shadow: 0 2px 14px rgba(26,75,140,0.08);
+  border-bottom: 4px solid var(--primary-light);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.servico-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 14px 14px 0 0;
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(26,75,140,0.15);
+  border-color: var(--accent);
+}
+
+.servico-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+}
+
+.servico-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.servico-card p {
+  color: var(--text-light);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.servico-preco {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--accent-dark);
+  background: #eafaf1;
+  border-radius: 8px;
+  padding: 7px 16px;
+  display: inline-block;
+}
+
+/* =========== AVALIAÇÕES =========== */
+#avaliacoes {
+  background: var(--primary-light);
+}
+
+.avaliacoes-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.nota-grande {
+  font-family: 'Lato', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  display: block;
+}
+
+.stars {
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin: 8px 0;
+  display: block;
+}
+
+.avaliacoes-count {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 600;
+  display: block;
+  margin-top: 4px;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.depoimento-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 30px 28px;
+  box-shadow: 0 2px 14px rgba(26,75,140,0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(26,75,140,0.14);
+}
+
+.dep-stars {
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.dep-text {
+  font-size: 0.98rem;
+  color: var(--text-mid);
+  line-height: 1.72;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.dep-autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dep-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: var(--white);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.dep-nome {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  display: block;
+}
+
+.dep-data {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  display: block;
+  margin-top: 2px;
+}
+
+/* =========== CONTATO =========== */
+#contato {
+  background: var(--white);
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contato-info h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 28px;
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.info-content .info-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.info-content .info-value {
+  font-size: 0.97rem;
+  color: var(--text-mid);
+  line-height: 1.55;
+}
+
+.info-content a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.info-content a:hover {
+  color: var(--accent-dark);
+}
+
+.horario-box {
+  background: var(--primary-light);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.horario-box h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.horario-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(26,75,140,0.1);
+  font-size: 0.94rem;
+}
+
+.horario-row:last-child {
+  border-bottom: none;
+}
+
+.horario-row .dia {
+  color: var(--text-mid);
+  font-weight: 600;
+}
+
+.horario-row .hora {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.horario-row .fechado {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.cta-contato {
+  margin-top: 28px;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: var(--white);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-whatsapp:hover {
+  background: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(37,211,102,0.4);
+}
+
+/* =========== FOOTER =========== */
+footer {
+  background: var(--primary-dark);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.18rem;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 18px;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  margin: 16px auto;
+}
+
+.footer-copy {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  section {
+    padding: 64px 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sobre-nums {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-outline {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-nums {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- =========== NAVBAR =========== -->
+<nav>
+  <a href="#inicio" class="nav-brand">
+    Instituto Savan
+    <span>Estética Avançada</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- =========== HERO =========== -->
+<section id="inicio">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">Plano Piloto · Brasília – DF</span>
+    <h1 class="hero-title">Instituto Savan Estética Avançada</h1>
+    <p class="hero-tagline">Transformamos sua autoestima com ciência, precisão e cuidado especializado — o seu melhor resultado começa aqui.</p>
+    <div class="hero-buttons">
+      <a href="#contato" class="btn-primary">Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========== GALERIA =========== -->
+<section id="galeria">
+  <div class="container">
+    <span class="section-label">Nossa Clínica</span>
+    <h2 class="section-title">Ambiente & Estrutura</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Espaço moderno, acolhedor e equipado com tecnologia de ponta para o seu conforto e segurança.</p>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Recepção do Instituto Savan" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Sala de atendimento" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80" alt="Equipamentos modernos" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SOBRE =========== -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <span class="section-label">Quem Somos</span>
+        <h2 class="section-title">Excelência em Estética Clínica</h2>
+        <div class="divider"></div>
+        <p>O Instituto Savan Estética Avançada nasceu com uma missão clara: oferecer tratamentos estéticos de alto padrão, fundamentados em evidências científicas e executados com rigor técnico. Localizada no coração de Brasília, nossa clínica reúne profissionais altamente capacitados e equipamentos de última geração.</p>
+        <p>Cada procedimento é planejado de forma personalizada, respeitando a singularidade de cada paciente. Aqui, estética e saúde caminham juntas, sempre com ética, segurança e resultados comprovados.</p>
+        <p>Nossa localização privilegiada no Edifício Palácio do Rádio I, no Plano Piloto, garante fácil acesso a toda região do Distrito Federal.</p>
+      </div>
+      <div class="sobre-nums">
+        <div class="num-card">
+          <span class="num">+5</span>
+          <span class="num-label">Anos de Experiência</span>
+        </div>
+        <div class="num-card">
+          <span class="num">+800</span>
+          <span class="num-label">Pacientes Atendidos</span>
+        </div>
+        <div class="num-card">
+          <span class="num">15+</span>
+          <span class="num-label">Tratamentos Disponíveis</span>
+        </div>
+        <div class="num-card">
+          <span class="num">4.6★</span>
+          <span class="num-label">Avaliação Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== SERVIÇOS =========== -->
+<section id="cardapio">
+  <div class="container">
+    <span class="section-label">Especialidades</span>
+    <h2 class="section-title">Nossos Tratamentos</h2>
+    <div class="divider"></div>
+    <p class="section-subtitle">Procedimentos clinicamente comprovados para realçar sua beleza natural e promover o bem-estar integral.</p>
+    <div class="servicos-grid">
+
+      <div class="servico-card">
+        <div class="servico-icon">💉</div>
+        <h3>Toxina Botulínica</h3>
+        <p>Aplicação de botox para suavizar rugas de expressão e linhas finas do rosto. Procedimento seguro com resultado natural e duradouro.</p>
+        <span class="servico-preco">A partir de R$ 650</span>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">✨</div>
+        <h3>Preenchimento Facial</h3>
+        <p>Ácido hialurônico para volumizar, contornar e rejuvenescer lábios, maçãs do rosto, sulcos e outras áreas do rosto.</p>
+        <span class="servico-preco">A partir de R$ 950</span>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🔬</div>
+        <h3>Bioestimuladores de Colágeno</h3>
+        <p>Tratamento que estimula a produção natural de colágeno, promovendo firmeza e elasticidade à pele de forma progressiva.</p>
+        <span class="servico-preco">A partir de R$ 1.200</span>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🌊</div>
+        <h3>Harmonização Facial</h3>
+        <p>Conjunto de procedimentos personalizados para equilibrar proporções e traços do rosto com resultados harmônicos e naturais.</p>
+        <span class="servico-preco">A partir de R$ 1.800</span>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">⚡</div>
+        <h3>Microagulhamento</h3>
+        <p>Estimulação da renovação celular para tratar cicatrizes, poros dilatados e manchas, com absorção aprimorada de ativos.</p>
+        <span class="servico-preco">A partir de R$ 380</span>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🌿</div>
+        <h3>Skincare Clínico Personalizado
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/5561994171556" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
