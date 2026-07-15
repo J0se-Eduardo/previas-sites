@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EviDente Odontologia | Águas Claras, Brasília</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1A4B8C;
+  --primary-dark: #123566;
+  --primary-light: #E8F0FA;
+  --accent: #2ECC71;
+  --accent-dark: #27AE60;
+  --white: #FFFFFF;
+  --light-gray: #F4F7FB;
+  --gray: #6B7C93;
+  --dark: #1A2A3A;
+  --text: #2C3E50;
+  --gold: #F0B429;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Lato', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+/* ========== NAVBAR ========== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(18, 53, 102, 0.95);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+.nav-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.45rem;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand span.ev {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: color 0.25s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ========== HERO ========== */
+#inicio {
+  height: 100vh;
+  min-height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1606811841689-23dfddce3e66?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(18,53,102,0.72), rgba(10,30,60,0.55));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-pretitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  color: var(--white);
+  line-height: 1.1;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.3);
+}
+
+.hero-title em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.hero-tagline {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(255,255,255,0.88);
+  font-weight: 300;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(46,204,113,0.35);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(46,204,113,0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.85);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+/* ========== SECTIONS SHARED ========== */
+.section {
+  padding: 80px 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--primary-dark);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ========== GALERIA ========== */
+#galeria {
+  background: var(--light-gray);
+  padding: 70px 24px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(26,75,140,0.2);
+}
+
+/* ========== SOBRE ========== */
+#sobre {
+  background: var(--white);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sobre-text p {
+  font-size: 1.05rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.sobre-text p:last-child {
+  margin-bottom: 0;
+}
+
+.sobre-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.num-card {
+  background: var(--primary-light);
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  border-top: 4px solid var(--primary);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.num-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26,75,140,0.15);
+}
+
+.num-value {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2.6rem;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.num-label {
+  font-size: 0.88rem;
+  color: var(--gray);
+  font-weight: 600;
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+.num-accent .num-value {
+  color: var(--accent-dark);
+}
+
+.num-accent {
+  border-top-color: var(--accent);
+  background: #E8FAF1;
+}
+
+/* ========== SERVIÇOS ========== */
+#cardapio {
+  background: var(--light-gray);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 16px rgba(26,75,140,0.07);
+  border-left: 5px solid var(--primary);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(26,75,140,0.14);
+  border-color: var(--accent);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 2px;
+}
+
+.service-name {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.12rem;
+  color: var(--primary-dark);
+}
+
+.service-desc {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.service-price {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent-dark);
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--light-gray);
+}
+
+/* ========== AVALIAÇÕES ========== */
+#avaliacoes {
+  background: var(--primary-light);
+  padding: 80px 24px;
+}
+
+.avaliacoes-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nota-grande {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 4.5rem;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.estrelas-grandes {
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+  margin: 8px 0;
+}
+
+.total-avaliacoes {
+  font-size: 1rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.avaliacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 16px rgba(26,75,140,0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(26,75,140,0.14);
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-text {
+  font-size: 0.97rem;
+  color: var(--text);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.review-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+}
+
+.review-date {
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+.google-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+/* ========== CONTATO ========== */
+#contato {
+  background: var(--white);
+  padding: 80px 24px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contato-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.info-label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.info-value a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.info-value a:hover {
+  color: var(--accent-dark);
+}
+
+.horarios-card {
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 32px 28px;
+  border-left: 5px solid var(--primary);
+}
+
+.horarios-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.horario-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(26,75,140,0.1);
+  font-size: 0.95rem;
+}
+
+.horario-row:last-child {
+  border-bottom: none;
+}
+
+.horario-dia {
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.horario-hora {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.horario-fechado {
+  color: #E74C3C;
+  font-weight: 700;
+}
+
+.cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+}
+
+.cta-whatsapp:hover {
+  background: #1DA851;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(37,211,102,0.4);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.footer-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-brand span {
+  color: var(--accent);
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin: 16px auto;
+  border-radius: 2px;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .sobre-numbers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avaliacoes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-numbers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .num-value {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav>
+  <a class="nav-brand" href="#inicio">
+    <span class="ev">Evi</span>Dente Odontologia
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section id="inicio">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">Águas Claras · Brasília · DF</span>
+    <h1 class="hero-title"><em>Evi</em>Dente Odontologia</h1>
+    <p class="hero-tagline">Sorrisos que transformam vidas — cuidado preciso, resultado que você se orgulha de mostrar ao mundo.</p>
+    <div class="hero-buttons">
+      <a href="#contato" class="btn-primary">Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALERIA ========== -->
+<section id="galeria">
+  <div class="container">
+    <span class="section-tag">Nossa Clínica</span>
+    <h2 class="section-title">Ambiente Pensado para Você</h2>
+    <p class="section-subtitle">Estrutura moderna e aconchegante para garantir o seu conforto desde o primeiro momento.</p>
+    <div class="galeria-grid">
+      <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&q=80" alt="Clínica EviDente - Recepção" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Clínica EviDente - Consultório" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffbb4d5c7e9?w=600&q=80" alt="Clínica EviDente - Equipamentos" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOBRE ========== -->
+<section id="sobre" class="section">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <span class="section-tag">Sobre Nós</span>
+        <h2 class="section-title">Saúde Bucal com Excelência e Cuidado Humano</h2>
+        <p>A EviDente Odontologia nasceu com o compromisso de oferecer atendimento odontológico de alto nível, unindo tecnologia de ponta, técnica apurada e uma relação de confiança com cada paciente.</p>
+        <p>Localizada no coração de Águas Claras, no moderno Ed. Connect Towers, nossa clínica conta com profissionais especializados prontos para cuidar do seu sorriso com atenção, precisão e humanidade.</p>
+        <p>Cada tratamento é pensado de forma individualizada, respeitando o tempo e as necessidades do paciente. Porque aqui, mais do que tratar dentes, transformamos sorrisos e elevamos a autoestima.</p>
+      </div>
+      <div class="sobre-numbers">
+        <div class="num-card">
+          <div class="num-value">+5k</div>
+          <div class="num-label">Pacientes Atendidos</div>
+        </div>
+        <div class="num-card num-accent">
+          <div class="num-value">4.2★</div>
+          <div class="num-label">Avaliação Google</div>
+        </div>
+        <div class="num-card num-accent">
+          <div class="num-value">8+</div>
+          <div class="num-label">Especialidades</div>
+        </div>
+        <div class="num-card">
+          <div class="num-value">100%</div>
+          <div class="num-label">Satisfação & Cuidado</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVIÇOS ========== -->
+<section id="cardapio" class="section">
+  <div class="container">
+    <span class="section-tag">Especialidades</span>
+    <h2 class="section-title">Nossos Serviços Odontológicos</h2>
+    <p class="section-subtitle">Tratamentos completos para cuidar da sua saúde bucal em todas as fases da vida.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🦷</div>
+        <div class="service-name">Clínica Geral e Prevenção</div>
+        <div class="service-desc">Consultas de rotina, limpeza profissional (profilaxia), aplicação de flúor e diagnóstico precoce para manter sua saúde bucal em dia.</div>
+        <div class="service-price">A partir de R$ 120</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <div class="service-name">Clareamento Dental</div>
+        <div class="service-desc">Clareamento de consultório com tecnologia LED e clareamento caseiro supervisionado. Resultados visíveis com segurança e conforto.</div>
+        <div class="service-price">A partir de R$ 680</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <div class="service-name">Implante Dentário</div>
+        <div class="service-desc">Reposição de dentes perdidos com implantes de titânio de alta qualidade, devolvendo função mastigatória e estética ao seu sorriso.</div>
+        <div class="service-price">A partir de R$ 2.200</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <div class="service-name">Ortodontia</div>
+        <div class="service-desc">Aparelhos metálicos, estéticos e alinhadores invisíveis. Correção de mordida e alinhamento dental para todas as idades.</div>
+        <div class="service-price">A partir de R$ 290/mês</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <div class="service-name">Lente de Contato Dental</div>
+        <div class="service-desc">Facetas em porcelana ultrafinas que corrigem cor, forma e tamanho dos dentes, criando o sorriso perfeito com mínimo desgaste.</div>
+        <div class="service-price">A partir de R$ 850 por unidade</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">😌</div>
+        <div class="service-name">Endodontia (Canal)</div>
+        <div class="service-desc">Tratamento de canal com instrumentação rotatória e anestesia eficiente, garantindo o procedimento com máximo conforto e segurança.</div>
+        <div class="service-price">A partir de R$ 550</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <div class="service-name">Odontopediatria</div>
+        <div class="service-desc">Atendimento especializado para crianças em ambiente lúdico e acolhedor, criando uma relação positiva com a saúde bucal desde cedo.</div>
+        <div class="service-price">A partir de R$ 150</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <div class="service-name">Prótese Dentária</div>
+        <div class="service-desc">Próteses fixas, removíveis e sobre implantes. Restauramos função e estética com materiais de alta qual
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/556135259322" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
