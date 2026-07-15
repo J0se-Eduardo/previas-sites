@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mais Top Estética Asa Sul</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1A4B8C;
+  --primary-dark: #122f5c;
+  --primary-light: #e8f0fb;
+  --accent: #2ECC71;
+  --accent-dark: #27ae60;
+  --white: #ffffff;
+  --text: #1a1a2e;
+  --text-light: #5a6a7e;
+  --gold: #C8A97E;
+  --card-bg: #f4f8ff;
+  --border: #d0dff5;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(18, 47, 92, 0.97);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.nav-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+
+.nav-brand span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+#inicio {
+  height: 100vh;
+  min-height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1560066984-138daaa7b17a?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,25,60,0.75), rgba(10,25,60,0.5));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 800px;
+}
+
+.hero-pretitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(255,255,255,0.88);
+  font-weight: 300;
+  margin-bottom: 36px;
+  letter-spacing: 0.5px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(46,204,113,0.4);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(46,204,113,0.5);
+}
+
+.btn-outline {
+  border: 2px solid rgba(255,255,255,0.85);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* SECTION WRAPPER */
+.section {
+  padding: 80px 32px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1.05rem;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.title-line {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  border-radius: 2px;
+  margin: 12px auto 20px;
+}
+
+/* GALERIA */
+#galeria {
+  background: var(--primary-light);
+  padding: 80px 32px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(26,75,140,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(26,75,140,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* SOBRE + SERVIÇOS */
+#sobre {
+  background: var(--white);
+  padding: 80px 32px;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre-text h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.sobre-text .accent-line {
+  width: 55px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.sobre-text p {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.sobre-highlight {
+  background: var(--primary-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin-top: 20px;
+  font-style: italic;
+  color: var(--primary-dark);
+  font-size: 1rem;
+}
+
+.sobre-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(26,75,140,0.12);
+}
+
+.stat-number {
+  font-family: 'Lato', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* SERVIÇOS */
+#cardapio {
+  background: #f0f5ff;
+  padding: 80px 32px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 26px;
+  box-shadow: 0 2px 20px rgba(26,75,140,0.08);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(26,75,140,0.15);
+}
+
+.service-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.service-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.service-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+
+.service-price {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: var(--accent-dark);
+  font-size: 1.15rem;
+  background: rgba(46,204,113,0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+/* AVALIAÇÕES */
+#avaliacoes {
+  background: var(--primary-light);
+  padding: 80px 32px;
+}
+
+.avaliacoes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rating-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.rating-number {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  color: var(--primary-dark);
+  line-height: 1;
+}
+
+.rating-stars {
+  font-size: 2.2rem;
+  color: #D4AC0D;
+  margin: 10px 0;
+  letter-spacing: 2px;
+}
+
+.rating-count {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 26px;
+  box-shadow: 0 2px 16px rgba(26,75,140,0.08);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(26,75,140,0.14);
+}
+
+.review-stars {
+  color: #D4AC0D;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-text {
+  color: var(--text);
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.review-name {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 0.95rem;
+}
+
+.review-date {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* CONTATO */
+#contato {
+  background: var(--white);
+  padding: 80px 32px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contato-info h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 28px;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-icon {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, var(--primary), #2563c7);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(26,75,140,0.25);
+}
+
+.info-content strong {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.info-content p, .info-content a {
+  color: var(--text-light);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.info-content a:hover {
+  color: var(--primary);
+}
+
+.horarios {
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--border);
+}
+
+.horarios h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.horario-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.horario-row:last-child {
+  border-bottom: none;
+}
+
+.horario-dia {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.horario-hora {
+  color: var(--text-light);
+}
+
+.horario-hora.fechado {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-top: 24px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+}
+
+.cta-whatsapp:hover {
+  background: #1ebe57;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary-dark);
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.footer-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-brand span {
+  color: var(--accent);
+}
+
+.footer-text {
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+
+.footer-divider {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 14px auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  #galeria, #sobre, #cardapio, #avaliacoes, #contato {
+    padding: 60px 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .sobre-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">Mais Top <span>Estética</span> Asa Sul</div>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">Asa Sul · Brasília · DF</span>
+    <h1 class="hero-title">Mais Top Estética<br>Asa Sul</h1>
+    <p class="hero-tagline">Sua beleza, tratada com ciência, arte e cuidado genuíno.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5561992628870" class="btn-primary">📲 Agendar Agora</a>
+      <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="container">
+    <h2 class="section-title">Nossa Clínica</h2>
+    <div class="title-line"></div>
+    <p class="section-subtitle">Um ambiente moderno, acolhedor e pensado para o seu bem-estar.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1560066984-138daaa7b17a?w=600&q=80" alt="Ambiente da clínica" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Tratamento estético" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Cuidados com a pele" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-grid">
+    <div class="sobre-text">
+      <h2>Sobre a Mais Top</h2>
+      <div class="accent-line"></div>
+      <p>A <strong>Mais Top Estética Asa Sul</strong> é uma clínica de estética completa, localizada no coração da Asa Sul, em Brasília. Contamos com profissionais altamente capacitados e equipamentos de última geração para oferecer resultados reais e duradouros.</p>
+      <p>Nosso compromisso é unir tecnologia avançada, protocolos personalizados e um atendimento humano e acolhedor. Cada cliente é único — e cada tratamento reflete isso.</p>
+      <p>Estamos no <strong>Centro Clínico Via Brasil</strong>, de fácil acesso, com estacionamento e toda a infraestrutura para que sua experiência seja sempre especial.</p>
+      <div class="sobre-highlight">
+        "Mais do que estética — é autoestima, confiança e saúde da pele em cada sessão."
+      </div>
+    </div>
+    <div class="sobre-stats">
+      <div class="stat-card">
+        <div class="stat-number">4.9</div>
+        <div class="stat-label">Nota no Google</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">14+</div>
+        <div class="stat-label">Avaliações</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Protocolos Seguros</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">★ Top</div>
+        <div class="stat-label">Referência na Asa Sul</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="cardapio">
+  <div class="container">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <div class="title-line"></div>
+    <p class="section-subtitle">Tratamentos estéticos completos para rosto e corpo com tecnologia e cuidado.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-icon">✨</span>
+        <div class="service-name">Limpeza de Pele Profunda</div>
+        <p class="service-desc">Protocolo completo de higienização, extração e hidratação para uma pele limpa, revitalizada e com brilho saudável.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">💉</span>
+        <div class="service-name">Preenchimento Facial</div>
+        <p class="service-desc">Procedimento estético com ácido hialurônico para contorno, volume e suavização de rugas com resultados naturais.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🌟</span>
+        <div class="service-name">Peeling Químico</div>
+        <p class="service-desc">Renovação celular profunda para tratar manchas, poros dilatados, acne e irregularidades da pele de forma eficaz.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🧖</span>
+        <div class="service-name">Drenagem Linfática</div>
+        <p class="service-desc">Técnica especializada que estimula a circulação, reduz edemas, combate retenção hídrica e promove leveza corporal.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">⚡</span>
+        <div class="service-name">Radiofrequência</div>
+        <p class="service-desc">Tratamento não invasivo que estimula o colágeno, firma a pele e combate flacidez no rosto e corpo com eficácia comprovada.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🔆</span>
+        <div class="service-name">Microagulhamento</div>
+        <p class="service-desc">Estímulo da produção natural de colágeno para rejuvenescimento, redução de cicatrizes de acne e textura da pele.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">💆</span>
+        <div class="service-name">Massagem Modeladora</div>
+        <p class="service-desc">Técnica corporal que trabalha o contorno, reduz medidas, combate celulite e melhora a circulação sanguínea.</p>
+        <span class="service-price">A consultar</span>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🪄</span>
+        <div class="service-name">Toxina Botulínica</div>
+        <p class="service-desc">Aplicação segura e precisa para suavizar linhas de expressão e tratar bruxismo com resultado natural e prolongado
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/5561992628870" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
