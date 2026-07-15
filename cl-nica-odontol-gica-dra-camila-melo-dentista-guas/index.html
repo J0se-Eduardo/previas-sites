@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Odontológica Dra. Camila Melo | Dentista Águas Claras | Especialista em Odontopediatria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1A4B8C;
+  --primary-dark: #0F2E5A;
+  --primary-light: #E8F0FC;
+  --accent: #2ECC71;
+  --accent-dark: #27AE60;
+  --white: #ffffff;
+  --gray-light: #f4f7fb;
+  --gray: #6b7280;
+  --text: #1e293b;
+  --gold: #F0B429;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 16px 32px;
+  background: rgba(15, 46, 90, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-brand {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  max-width: 340px;
+  line-height: 1.3;
+}
+
+.nav-brand span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  transition: color 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===== HERO ===== */
+#inicio {
+  height: 100vh;
+  min-height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15,46,90,0.75), rgba(15,46,90,0.55));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-pretitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(46,204,113,0.12);
+  border: 1px solid rgba(46,204,113,0.35);
+  padding: 6px 18px;
+  border-radius: 30px;
+}
+
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  color: var(--white);
+  line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.88);
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background 0.25s ease, transform 0.2s ease;
+  border: 2px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background 0.25s ease, transform 0.2s ease;
+  border: 2px solid rgba(255,255,255,0.75);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+.hero-badges {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.hero-badge-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+/* ===== SECTIONS COMMON ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 90px 0;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--primary-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray);
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+/* ===== GALERIA ===== */
+#galeria {
+  background: var(--gray-light);
+  padding: 80px 0;
+}
+
+.galeria-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(26,75,140,0.1);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.03);
+}
+
+/* ===== SOBRE ===== */
+#sobre {
+  background: var(--white);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.sobre-text p {
+  font-size: 1.05rem;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.sobre-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.sobre-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.97rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.feature-dot {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-size: 0.65rem;
+  color: white;
+  font-weight: 700;
+}
+
+.sobre-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.number-card {
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  border-left: 4px solid var(--primary);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.number-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(26,75,140,0.15);
+}
+
+.number-card .number {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.number-card .number-accent {
+  color: var(--accent);
+}
+
+.number-card p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+}
+
+/* ===== CARDÁPIO / SERVIÇOS ===== */
+#cardapio {
+  background: var(--gray-light);
+}
+
+.cardapio-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.cardapio-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.especialidade-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-shadow: 0 2px 12px rgba(26,75,140,0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-top: 4px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.especialidade-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--primary-light);
+  border-radius: 50% 0 0 0;
+}
+
+.especialidade-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(26,75,140,0.14);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--primary-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.especialidade-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.especialidade-card p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+
+.card-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* ===== AVALIAÇÕES ===== */
+#avaliacoes {
+  background: var(--primary-light);
+  padding: 90px 0;
+}
+
+.avaliacoes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.rating-big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.rating-number {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 4.5rem;
+  color: var(--primary-dark);
+  line-height: 1;
+}
+
+.rating-right {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stars-big {
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+.rating-count {
+  font-size: 1rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.rating-label {
+  font-size: 0.8rem;
+  color: var(--accent-dark);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.depoimento-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 16px rgba(26,75,140,0.09);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.depoimento-card::before {
+  content: '"';
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 5rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: var(--primary-light);
+  line-height: 1;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(26,75,140,0.14);
+}
+
+.depo-stars {
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.depo-text {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.depo-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.depo-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.avatar-blue { background: var(--primary); }
+.avatar-green { background: var(--accent-dark); }
+
+.depo-name {
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: var(--primary-dark);
+}
+
+.depo-sub {
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+
+/* ===== CONTATO ===== */
+#contato {
+  background: var(--white);
+  padding: 90px 0 60px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contato-info h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.contato-info .section-subtitle {
+  margin-bottom: 36px;
+}
+
+.contato-items {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contato-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: var(--primary-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.contato-item-text strong {
+  display: block;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 3px;
+}
+
+.contato-item-text span, .contato-item-text a {
+  font-size: 0.97rem;
+  color: var(--text);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.contato-item-text a:hover {
+  color: var(--accent-dark);
+}
+
+.horarios-card {
+  background: var(--gray-light);
+  border-radius: 14px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 12px rgba(26,75,140,0.06);
+}
+
+.horarios-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.horario-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(26,75,140,0.08);
+  font-size: 0.95rem;
+}
+
+.horario-row:last-child {
+  border-bottom: none;
+}
+
+.horario-row .dia {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.horario-row .hora {
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.horario-row .hora.fechado {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.badge-aberto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(46,204,113,0.12);
+  border: 1px solid var(--accent);
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-top: 22px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+
+.cta-section {
+  background: var(--primary);
+  padding: 56px 24px;
+  text-align: center;
+  margin-top: 70px;
+  border-radius: 16px;
+}
+
+.cta-section h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  color: rgba(255,255,255,0.78);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+}
+
+.btn-cta-white {
+  background: var(--white);
+  color: var(--primary);
+  padding: 14px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.97rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-cta-white:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary-dark);
+  padding: 40px 24px 28px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-logo span {
+  color: var(--accent);
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 18px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto 18px;
+  border-radius: 2px;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.38);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-brand {
+    font-size: 0.88rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sobre-numbers {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section {
+    padding: 64px 0;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-numbers {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rating-number {
+    font-size: 3.2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a href="#inicio" class="nav-brand">
+    Dra. Camila Melo <span>·</span> Odontologia
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Especialidades</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="inicio">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">Águas Claras · Brasília · DF</span>
+    <h1 class="hero-title">
+      Clínica Odontológica<br>
+      <span>Dra. Camila Melo</span>
+    </h1>
+    <p class="hero-tagline">
+      Sorrisos transformados com cuidado, ciência e carinho — do primeiro dentinho ao sorriso adulto perfeito.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contato" class="btn-primary">📅 Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Especialidades</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">
+        <div class="hero-badge-icon">⭐</div>
+        5.0 no Google
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">👶</div>
+        Odontopediatria
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">🦷</div>
+        Especialista CRO-DF
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-header">
+      <span class="section-label">Nossa Clínica</span>
+      <h2 class="section-title">Ambiente Moderno e Acolhedor</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Espaços pensados para que você e sua família se sintam confortáveis e seguros em cada visita.</p>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Consultório odontológico moderno" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Equipamentos odontológicos" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Recepção da clínica" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80" alt="Dentista em atendimento" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Sala de espera" style
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/5561986661563" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
