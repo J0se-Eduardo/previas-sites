@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annette Tratamentos Estéticos</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --nude: #F0D5D5;
+  --nude-light: #FAF0F0;
+  --nude-dark: #D4A8A8;
+  --gold: #C8A97E;
+  --gold-dark: #A8845A;
+  --rose: #9B5A6A;
+  --rose-dark: #7A3D4E;
+  --text-dark: #2C1A22;
+  --text-mid: #5C3D4A;
+  --white: #FFFFFF;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 16px 32px;
+  background: rgba(122, 61, 78, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--nude-light);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--nude);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1607081692251-f7c01ff79c19?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(60, 20, 35, 0.72), rgba(40, 10, 20, 0.55));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-pretitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--nude);
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--text-dark);
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 13px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* SECTION BASE */
+section {
+  padding: 90px 32px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--rose-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 40px;
+}
+
+/* GALERIA */
+#galeria {
+  background: var(--nude-light);
+  padding-top: 90px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+  transform: scale(1.03);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* SOBRE */
+#sobre {
+  background: var(--white);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.sobre-text p {
+  color: var(--text-mid);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.sobre-text p:last-child {
+  margin-bottom: 0;
+}
+
+.numeros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.numero-card {
+  background: var(--nude-light);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid var(--nude-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.numero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(155, 90, 106, 0.12);
+}
+
+.numero-valor {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--rose-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.numero-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-mid);
+  letter-spacing: 0.05em;
+}
+
+/* CARDÁPIO / SERVIÇOS */
+#cardapio {
+  background: var(--nude-light);
+}
+
+.servicos-intro {
+  max-width: 580px;
+  margin-bottom: 56px;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.servico-card {
+  padding: 28px 24px;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(155, 90, 106, 0.08);
+  border: 1px solid rgba(200, 169, 126, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.servico-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), var(--rose));
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(155, 90, 106, 0.15);
+}
+
+.servico-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.servico-nome {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+  margin-bottom: 8px;
+}
+
+.servico-desc {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.servico-preco {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  letter-spacing: 0.02em;
+}
+
+/* AVALIAÇÕES */
+#avaliacoes {
+  background: linear-gradient(135deg, #FAF0F0 0%, #F5E8E8 100%);
+}
+
+.avaliacoes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.nota-grande {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--rose-dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.estrelas-gold {
+  color: var(--gold);
+  font-size: 2rem;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.avaliacoes-sub {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.depoimento-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 24px rgba(155, 90, 106, 0.1);
+  border: 1px solid rgba(200, 169, 126, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(155, 90, 106, 0.16);
+}
+
+.depoimento-estrelas {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.depoimento-texto {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.depoimento-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--nude-dark), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.depoimento-nome {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.depoimento-data {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+}
+
+/* CONTATO */
+#contato {
+  background: var(--white);
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.contato-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.contato-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--nude), var(--nude-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contato-info-title {
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+
+.contato-info-text {
+  color: var(--text-mid);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contato-info-text a {
+  color: var(--rose);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contato-info-text a:hover {
+  color: var(--rose-dark);
+}
+
+.horarios-box {
+  background: var(--nude-light);
+  border-radius: 20px;
+  padding: 36px 32px;
+  border: 1px solid rgba(200, 169, 126, 0.25);
+}
+
+.horarios-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--rose-dark);
+  margin-bottom: 24px;
+}
+
+.horario-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(200, 169, 126, 0.2);
+}
+
+.horario-linha:last-child {
+  border-bottom: none;
+}
+
+.horario-dia {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-mid);
+}
+
+.horario-hora {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--rose-dark);
+}
+
+.horario-fechado {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--nude-dark);
+}
+
+.badge-aberto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(46, 180, 110, 0.12);
+  color: #1a7a4a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-top: 16px;
+  border: 1px solid rgba(46, 180, 110, 0.25);
+}
+
+.dot-verde {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2eb46e;
+  display: inline-block;
+}
+
+/* FOOTER */
+footer {
+  background: var(--rose-dark);
+  padding: 48px 32px 32px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--nude-light);
+  letter-spacing: 0.04em;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+  color: var(--nude-dark);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer-divider {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--nude);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(240, 213, 213, 0.55);
+  margin-top: 8px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .numeros-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .nota-grande {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .numeros-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#inicio" class="nav-logo">Annette Tratamentos Estéticos</a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">✦ Asa Sul · Brasília, DF ✦</span>
+    <h1 class="hero-title">Annette Tratamentos Estéticos</h1>
+    <p class="hero-tagline">Onde a ciência encontra a beleza — e o cuidado se torna ritual.</p>
+    <div class="hero-buttons">
+      <a href="#contato" class="btn-primary">Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="container">
+    <span class="section-label">Nossa Clínica</span>
+    <h2 class="section-title">Um espaço feito para você</h2>
+    <div class="section-divider"></div>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80" alt="Ambiente da clínica" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Tratamento facial" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Cuidados estéticos" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Produtos e skincare" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" alt="Relaxamento e bem-estar" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Profissional especializada" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <span class="section-label">Nossa História</span>
+        <h2 class="section-title">Cuidado que transforma, beleza que empodera</h2>
+        <div class="section-divider"></div>
+        <p>A Annette Tratamentos Estéticos nasceu do desejo genuíno de oferecer muito mais do que procedimentos estéticos: queremos proporcionar uma experiência completa de autocuidado, confiança e renovação.</p>
+        <p>Localizada no coração da Asa Sul em Brasília, nossa clínica reúne tecnologia de ponta, profissionais altamente capacitados e um ambiente acolhedor, pensado para que cada cliente se sinta única e valorizada desde o momento em que entra pela porta.</p>
+        <p>Com foco em resultados reais e duradouros, trabalhamos com protocolos personalizados que respeitam as características individuais de cada pele, corpo e estilo de vida. Aqui, beleza não é padrão — é expressão.</p>
+      </div>
+      <div>
+        <div class="numeros-grid">
+          <div class="numero-card">
+            <div class="numero-valor">4.9★</div>
+            <div class="numero-label">Avaliação Google</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero-valor">36+</div>
+            <div class="numero-label">Avaliações Reais</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero-valor">15+</div>
+            <div class="numero-label">Anos de Experiência</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero-valor">2k+</div>
+            <div class="numero-label">Clientes Atendidas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARDÁPIO / SERVIÇOS -->
+<section id="cardapio">
+  <div class="container">
+    <div class="servicos-intro">
+      <span class="section-label">Especialidades</span>
+      <h2 class="section-title">Nossos Tratamentos</h2>
+      <div class="section-divider"></div>
+      <p style="color: var(--text-mid); font-size: 0.97rem; line-height: 1.7;">Cada protocolo é desenvolvido individualmente, com base em avaliação criteriosa e nas mais avançadas técnicas estéticas disponíveis.</p>
+    </div>
+    <div class="servicos-grid">
+
+      <div class="servico-card">
+        <span class="servico-icon">✨</span>
+        <div class="servico-nome">Limpeza de Pele Profunda</div>
+        <p class="servico-desc">Protocolo completo de higienização facial com extração, esfoliação enzimática e máscara calmante personalizada para o seu tipo de pele.</p>
+        <div class="servico-preco">A partir de R$ 180</div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-icon">💉</span>
+        <div class="servico-nome">Bioestimulação de Colágeno</div>
+        <p class="servico-desc">Tratamento com bioestimuladores que regeneram o colágeno natural, devolvendo firmeza, elasticidade e jovialidade à sua pele.</p>
+        <div class="servico-preco">A partir de R$ 750</div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-icon">🌿</span>
+        <div class="servico-nome">Peeling Químico</div>
+        <p class="servico-desc">Renovação celular profunda com ácidos selecionados para tratar manchas, acne e envelhecimento, com recuperação rápida e resultados visíveis.</p>
+        <div class="servico-preco">A partir de R$ 320</div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-icon">⚡</span>
+        <div class="servico-nome">Radiofrequência Corporal</div>
+        <p class="servico-desc">Tecnologia de última geração para modelagem corporal, redução de medidas e tratamento da flacidez de forma não invasiva e confortável.</p>
+        <div class="servico-preco">A partir de R$ 280</div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-icon">💫</span>
+        <div class="servico-nome">Microagulhamento Facial</div>
+        <p class="servico-desc">Estimulação da produção natural de colágeno com microagulhas de precisão, ideal para cicatrizes, poros dilatados e rejuvenescimento.</p>
+        <div class="servico-preco">A partir de R$ 420</div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-icon">🌸</span>
+        <div class="servico-nome">Drenagem Linfática</div>
+        <p class="servico-desc">Massagem especializada para redução de edemas, eliminação de toxinas e melhora da circulação, proporcionando relaxamento profundo e bem-estar.</p>
+        <div class="servico-preco">A partir de R$ 160</div>
+      </div>
+
+      <div class="servico-card">
+        <span class="servico-icon">🔬</span>
+        <div class="servico-nome">Toxina Botulínica</div>
+        <p class="servico-desc
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/556132453013" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
