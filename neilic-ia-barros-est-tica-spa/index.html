@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neilicéia Barros Estética & Spa</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --nude: #F0D5D5;
+  --nude-light: #FAF0F0;
+  --nude-mid: #E8C4C4;
+  --gold: #C8A97E;
+  --gold-dark: #A8845A;
+  --dark: #3A1A2A;
+  --dark-mid: #5A2A3A;
+  --text: #2A1A1A;
+  --text-light: #6A4A4A;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(58, 26, 42, 0.95);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--nude);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--nude-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(58,26,42,0.65), rgba(58,26,42,0.45));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-pretitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(200,169,126,0.15);
+  border: 1px solid rgba(200,169,126,0.4);
+  padding: 8px 20px;
+  border-radius: 50px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1.1;
+  max-width: 800px;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--nude);
+  font-style: italic;
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.5;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* ===== SECTION COMMON ===== */
+section {
+  padding: 90px 32px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.divider-gold {
+  width: 50px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 20px 0;
+}
+
+/* ===== GALERIA ===== */
+#galeria {
+  background: var(--nude-light);
+  padding-top: 80px;
+}
+
+.galeria-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.galeria-header .divider-gold {
+  margin: 20px auto;
+}
+
+.galeria-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.galeria-item {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+  transform: scale(1.03);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ===== SOBRE ===== */
+#sobre {
+  background: var(--white);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sobre-text p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 16px;
+}
+
+.sobre-text p:last-child {
+  margin-bottom: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.stat-card {
+  background: var(--nude-light);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid var(--nude-mid);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(58,26,42,0.1);
+}
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.stat-card.highlight {
+  background: var(--dark);
+  border-color: var(--dark);
+}
+
+.stat-card.highlight .stat-number {
+  color: var(--gold);
+}
+
+.stat-card.highlight .stat-label {
+  color: var(--nude);
+}
+
+/* ===== SERVIÇOS ===== */
+#cardapio {
+  background: var(--nude-light);
+}
+
+.cardapio-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.cardapio-header .divider-gold {
+  margin: 20px auto;
+}
+
+.cardapio-header .section-subtitle {
+  margin: 0 auto;
+}
+
+.servicos-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.tab-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: var(--nude);
+  border: 1px solid var(--gold);
+  border-radius: 50px;
+  padding: 8px 22px;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.servico-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(58,26,42,0.07);
+  border: 1px solid var(--nude-mid);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.servico-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(58,26,42,0.13);
+}
+
+.servico-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.servico-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.servico-desc {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.servico-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--nude-mid);
+}
+
+.servico-duracao {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+
+.servico-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-mid);
+}
+
+/* ===== AVALIAÇÕES ===== */
+#avaliacoes {
+  background: var(--dark);
+  padding: 90px 32px;
+}
+
+#avaliacoes .section-label {
+  color: var(--gold);
+}
+
+#avaliacoes .section-title {
+  color: var(--white);
+}
+
+.avaliacoes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.avaliacoes-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.avaliacoes-header .divider-gold {
+  margin: 20px auto;
+}
+
+.rating-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rating-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.rating-stars {
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+}
+
+.rating-count {
+  font-size: 0.95rem;
+  color: var(--nude);
+  letter-spacing: 0.5px;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.depoimento-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(200,169,126,0.25);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,169,126,0.5);
+}
+
+.depoimento-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.depoimento-text {
+  color: var(--nude-light);
+  font-size: 1rem;
+  line-height: 1.75;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.depoimento-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--dark-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
+.author-info strong {
+  display: block;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.author-info span {
+  color: var(--nude);
+  font-size: 0.8rem;
+}
+
+/* ===== CONTATO ===== */
+#contato {
+  background: var(--nude-light);
+  padding: 90px 32px;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contato-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.contato-icon-box {
+  width: 50px;
+  height: 50px;
+  background: var(--dark);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contato-item-text strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 6px;
+}
+
+.contato-item-text p, .contato-item-text a {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contato-item-text a:hover {
+  color: var(--dark);
+}
+
+.horarios-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 32px rgba(58,26,42,0.09);
+  border: 1px solid var(--nude-mid);
+}
+
+.horarios-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--nude-mid);
+}
+
+.horario-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--nude-light);
+  font-size: 0.95rem;
+}
+
+.horario-row:last-child {
+  border-bottom: none;
+}
+
+.horario-dia {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.horario-hora {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.horario-hora.fechado {
+  color: var(--nude-mid);
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 24px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark);
+  padding: 48px 32px 32px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(200,169,126,0.2);
+}
+
+.footer-brand .nav-brand {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.footer-desc {
+  color: var(--nude);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  width: 38px;
+  height: 38px;
+  background: rgba(200,169,126,0.15);
+  border: 1px solid rgba(200,169,126,0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--gold);
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.social-link:hover {
+  background: rgba(200,169,126,0.3);
+  border-color: var(--gold);
+}
+
+.footer-col h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--nude);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: rgba(240,213,213,0.65);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--gold);
+}
+
+.footer-col p {
+  color: rgba(240,213,213,0.65);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy {
+  color: rgba(240,213,213,0.45);
+  font-size: 0.85rem;
+}
+
+.footer-badge {
+  font-size: 0.8rem;
+  color: rgba(200,169,126,0.6);
+  letter-spacing: 1px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .sobre-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 64px 20px;
+  }
+
+  #avaliacoes, #contato {
+    padding: 64px 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer {
+    padding: 40px 20px 28px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#inicio" class="nav-brand">Neilicéia Barros Estética & Spa</a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" style="padding:0; margin:0;">
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-pretitle">Asa Sul · Brasília · DF</span>
+      <h1 class="hero-title">Neilicéia Barros<br>Estética &amp; Spa</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-tagline">Onde cada tratamento é um ritual de autocuidado —<br>porque você merece florescer por dentro e por fora.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/5561998457825" class="btn-primary">Agendar Agora</a>
+        <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" style="padding-top:80px;">
+  <div class="container">
+    <div class="galeria-header">
+      <p class="section-label">Nossa Clínica</p>
+      <h2 class="section-title">Ambiente que Inspira Leveza</h2>
+      <div class="divider-gold"></div>
+      <p class="section-subtitle">Um espaço pensado em cada detalhe para que você se sinta em paz desde o momento em que entra.</p>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=600&q=80" alt="Sala de tratamento estético" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=600&q=80" alt="Ambiente spa relaxante" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Tratamento facial" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1607008829749-c0f284a49fc4?w=600&q=80" alt="Massagem relaxante" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Hidratação corporal" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Espaço de bem-estar" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <p class="section-label">Quem Somos</p>
+        <h2 class="section-title">Dedicação ao seu<br>Bem-Estar</h2>
+        <div class="divider-gold"></div>
+        <p>A Neilicéia Barros Estética &amp; Spa nasceu de uma paixão genuína pelo cuidado feminino e masculino. Localizada no coração da Asa Sul, em Brasília, nossa clínica oferece tratamentos estéticos de alta performance com toque personalizado e acolhedor.</p>
+        <p>Nossa fundadora, Neilicéia Barros, é profissional especializada com mais de 15 anos de experiência no mercado estético, reunindo em um único espaço as melhores técnicas nacionais e internacionais para face, corpo e relaxamento.</p>
+        <p>Utilizamos produtos de ponta, equipamentos modernos e protocolos cientificamente embasados — tudo para que você saia renovada, confiante e radiante a cada visita.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card highlight">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Anos de Experiência</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2K+</div>
+          <div class="stat-label">Clientes Atendidas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Tratamentos</div>
+        </div>
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/5561998457825" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
