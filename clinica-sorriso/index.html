@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Sorriso — Odontologia em Águas Claras</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --azul: #1A4B8C;
+  --azul-escuro: #0F2D5A;
+  --azul-claro: #E8F0FB;
+  --verde: #2ECC71;
+  --verde-escuro: #27AE60;
+  --branco: #FFFFFF;
+  --cinza-claro: #F4F7FB;
+  --cinza-texto: #555E6D;
+  --cinza-escuro: #2C3E50;
+  --dourado: #F0C040;
+  --sombra: 0 4px 20px rgba(26,75,140,0.10);
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--cinza-escuro);
+  background: var(--branco);
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(15, 45, 90, 0.97);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+.nav-logo {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.45rem;
+  color: var(--branco);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--verde);
+}
+
+.nav-logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--verde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  font-size: 0.97rem;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--verde);
+  border-bottom-color: var(--verde);
+}
+
+/* ===== HERO ===== */
+#hero {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1631217872822-8f85b56b7292?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,30,65,0.72), rgba(10,30,65,0.50));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.hero-pretitulo {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-pretitulo::before,
+.hero-pretitulo::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--verde);
+}
+
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  color: var(--branco);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.hero-title span {
+  color: var(--verde);
+}
+
+.hero-tagline {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 38px;
+  line-height: 1.6;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--verde);
+  color: var(--branco);
+  border: none;
+  padding: 15px 34px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.25s, transform 0.2s;
+  box-shadow: 0 4px 18px rgba(46,204,113,0.35);
+}
+
+.btn-primary:hover {
+  background: var(--verde-escuro);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--branco);
+  border: 2px solid var(--branco);
+  padding: 13px 34px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--branco);
+  color: var(--azul-escuro);
+  transform: translateY(-2px);
+}
+
+/* ===== SEÇÃO GENÉRICA ===== */
+section {
+  padding: 80px 32px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2.3rem;
+  color: var(--azul-escuro);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.section-desc {
+  font-size: 1.08rem;
+  color: var(--cinza-texto);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.divider {
+  width: 55px;
+  height: 4px;
+  background: var(--verde);
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+/* ===== GALERIA ===== */
+#galeria {
+  background: var(--cinza-claro);
+  padding-top: 80px;
+}
+
+.galeria-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.galeria-intro .divider {
+  margin: 0 auto 24px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.galeria-item {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(26,75,140,0.2);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ===== SOBRE ===== */
+#sobre {
+  background: var(--branco);
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sobre-texto p {
+  font-size: 1.05rem;
+  color: var(--cinza-texto);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.sobre-texto p strong {
+  color: var(--azul);
+}
+
+.sobre-numeros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.numero-card {
+  background: var(--azul-claro);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  border-top: 4px solid var(--azul);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.numero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.numero-card .num {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: var(--azul);
+  display: block;
+}
+
+.numero-card .num-label {
+  font-size: 0.92rem;
+  color: var(--cinza-texto);
+  font-weight: 600;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ===== CARDÁPIO / SERVIÇOS ===== */
+#cardapio {
+  background: var(--cinza-claro);
+}
+
+.cardapio-intro {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.cardapio-intro .divider {
+  margin: 0 auto 24px;
+}
+
+.cardapio-intro .section-desc {
+  margin: 0 auto;
+}
+
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.espec-card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 30px 26px;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s, box-shadow 0.25s;
+  border-left: 5px solid var(--verde);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.espec-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(26,75,140,0.15);
+}
+
+.espec-icon {
+  font-size: 2.2rem;
+  display: block;
+}
+
+.espec-nome {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.18rem;
+  color: var(--azul-escuro);
+}
+
+.espec-desc {
+  font-size: 0.97rem;
+  color: var(--cinza-texto);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.espec-badge {
+  display: inline-block;
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  align-self: flex-start;
+}
+
+/* ===== AVALIAÇÕES ===== */
+#avaliacoes {
+  background: var(--azul-claro);
+}
+
+.aval-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.aval-header .divider {
+  margin: 0 auto 24px;
+}
+
+.aval-nota-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.aval-numero {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  color: var(--azul);
+  line-height: 1;
+}
+
+.aval-info {
+  text-align: left;
+}
+
+.aval-estrelas {
+  font-size: 1.9rem;
+  color: var(--dourado);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.aval-total {
+  font-size: 0.95rem;
+  color: var(--cinza-texto);
+  font-weight: 600;
+}
+
+.aval-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.aval-card {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.aval-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(26,75,140,0.14);
+}
+
+.aval-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.aval-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--azul);
+  color: var(--branco);
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.aval-nome {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--azul-escuro);
+}
+
+.aval-card-estrelas {
+  color: var(--dourado);
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+.aval-texto {
+  font-size: 0.97rem;
+  color: var(--cinza-texto);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.aval-data {
+  font-size: 0.8rem;
+  color: #aab;
+  margin-top: 12px;
+}
+
+/* ===== CONTATO ===== */
+#contato {
+  background: var(--branco);
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contato-info-titulo {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--azul-escuro);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contato-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 22px;
+  align-items: flex-start;
+}
+
+.contato-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--azul-claro);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  color: var(--azul);
+}
+
+.contato-item-texto strong {
+  display: block;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.contato-item-texto span {
+  color: var(--cinza-texto);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+.horarios {
+  background: var(--cinza-claro);
+  border-radius: 14px;
+  padding: 28px;
+  border-left: 5px solid var(--azul);
+}
+
+.horario-linha {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid #e0e8f0;
+  font-size: 0.97rem;
+}
+
+.horario-linha:last-child {
+  border-bottom: none;
+}
+
+.horario-linha .dia {
+  font-weight: 600;
+  color: var(--azul-escuro);
+}
+
+.horario-linha .hora {
+  color: var(--cinza-texto);
+}
+
+.horario-linha .aberto {
+  color: var(--verde-escuro);
+  font-weight: 700;
+}
+
+.horario-linha .fechado {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+.mapa-placeholder {
+  background: var(--azul-claro);
+  border-radius: 14px;
+  padding: 36px 24px;
+  text-align: center;
+  margin-top: 30px;
+  border: 2px dashed #b8ccec;
+}
+
+.mapa-placeholder p {
+  color: var(--azul);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--azul-escuro);
+  padding: 40px 32px;
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-logo {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--branco);
+  margin-bottom: 10px;
+}
+
+.footer-logo span {
+  color: var(--verde);
+}
+
+.footer-desc {
+  font-size: 0.93rem;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--verde);
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 18px;
+  margin-top: 8px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .sobre-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 14px 18px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 6px 0;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+  }
+
+  section {
+    padding: 60px 18px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .aval-numero {
+    font-size: 3.5rem;
+  }
+
+  .sobre-numeros {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">🦷</div>
+    Clínica <span>Sorriso</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-pretitulo">Águas Claras · Brasília · DF</p>
+    <h1 class="hero-title">Clínica <span>Sorriso</span></h1>
+    <p class="hero-tagline">Cuidado especializado para o sorriso que você merece — porque cada detalhe da sua saúde bucal importa.</p>
+    <div class="hero-buttons">
+      <a href="#contato" class="btn-primary">📅 Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-intro">
+      <p class="section-label">Nossa Estrutura</p>
+      <h2 class="section-title">Ambiente Moderno e Acolhedor</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Consultório odontológico moderno" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Recepção da clínica" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&q=80" alt="Atendimento odontológico" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-texto">
+        <p class="section-label">Sobre Nós</p>
+        <h2 class="section-title">Saúde Bucal com Excelência e Cuidado</h2>
+        <div class="divider"></div>
+        <p>A <strong>Clínica Sorriso</strong> nasceu com o propósito de transformar a experiência odontológica, oferecendo atendimento humanizado aliado às mais modernas tecnologias disponíveis no mercado.</p>
+        <p>Localizada no <strong>Shopping DF Plaza, em Águas Claras</strong>, nossa equipe de dentistas especializados está pronta para cuidar de você e de toda sua família, garantindo saúde, estética e bem-estar em cada consulta.</p>
+        <p>Utilizamos equipamentos de última geração e materiais de alta qualidade, em um ambiente confortável, pensado para que você se sinta seguro e acolhido desde o momento em que chega.</p>
+      </div>
+      <div class="sobre-numeros">
+        <div class="numero-card">
+          <span class="num">10+</span>
+          <span class="num-label">Anos de Experiência</span>
+        </div>
+        <div class="numero-card">
+          <span class="num">5k+</span>
+          <span class="num-label">Pacientes Atendidos</span>
+        </div>
+        <div class="numero-card">
+          <span class="num">12</span>
+          <span class="num-label">Especialidades</span>
+        </div>
+        <div class="numero-card">
+          <span class="num">3.6</span>
+          <span class="num-label">Nota no Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="cardapio">
+  <div class="container">
+    <div class="cardapio-intro">
+      <p class="section-label">Especialidades</p>
+      <h2 class="section-title">Nossos Serviços Odontológicos</h2>
+      <div class="divider"></div>
+      <p class="section-desc">Oferecemos uma gama completa de tratamentos para cuidar da saúde e estética do seu sorriso com segurança e precisão.</p>
+    </div>
+    <div class="especialidades-grid">
+
+      <div class="espec-card">
+        <span class="espec-icon">🦷</span>
+        <span class="espec-nome">Clínica Geral</span>
+        <p class="espec-desc">Consultas de rotina, diagnóstico completo, restaurações e prevenção de doenças bucais. Cuide da sua saúde com acompanhamento regular e profissional.</p>
+        <span class="espec-badge">Preventivo</span>
+      </div>
+
+      <div class="espec-card">
+        <span class="espec-icon">✨</span>
+        <span class="espec-nome">Clareamento Dental</span>
+        <p class="espec-desc">Técnicas avançadas de clareamento a laser e caseiro para devolver o brilho natural dos seus dentes de forma segura e duradoura.</p>
+        <span class="espec-badge">Estética</span>
+      </div>
+
+      <div class="espec-card">
+        <span class="espec-icon">😁</span>
+        <span class="espec-nome">Ortodontia</span>
+        <p class="espec-desc">Aparelhos convencionais, autoligados e alinhadores invisíveis para corrigir o alinhamento dos dentes com eficiência e conforto.</p>
+        <span class="espec-badge">Correção</span>
+      </div>
+
+      <div class="espec-card">
+        <span class="espec-icon">🔬</span>
+        <span class="espec-nome">Implantes Dentários</span>
+        <p class="espec-desc">Reabilitação oral com implantes de titânio de alta qualidade, devolvendo função e estética de forma definitiva e natural.</p>
+        <span class="espec-badge">Reabilitação</span>
+      </div>
+
+      <div class="espec-card">
+        <span class="espec-icon">👶</span>
+        <span class="espec-nome">Odontopediatria</span>
+        <p class="espec-desc">Atendimento especializado para crianças em ambiente lúdico e acolhedor, formando hábitos saudáveis desde os primeiros dentes.</p>
+        <span class="espec-badge">Infantil</span>
+      </div>
+
+      <div class="espec-card">
+        <span class="espec-icon">💉</span>
+        <span class="espec-nome">Periodontia</span>
+        <p class="espec-desc">Tratamento de gengivite, periodontite e doenças das gengivas com técnicas cirúrgicas e não cirúrgicas de excelência.</p>
+        <span class="espec-badge">Gengiva</span>
+      </div>
+
+      <div class="espec-card">
+        <span class="espec-icon">🏥</span>
+        <span class="espec-nome">Endodontia</span>
+        <p class="espec-desc">Tratamento de canal com tecnologia de ponta, garantindo o salvamento do dente natural com mínimo desconforto.</p>
+        <span class="espec-badge">Canal</span>
+      </div
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/556132021844" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
