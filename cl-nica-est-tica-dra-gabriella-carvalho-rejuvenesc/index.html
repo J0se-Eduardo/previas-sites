@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Estética Dra. Gabriella Carvalho | Harmonização Facial · Brasília</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #6B2737;
+  --primary-dark: #4A1A25;
+  --primary-light: #f9f0f2;
+  --cream: #F5F0E8;
+  --gold: #C8A97E;
+  --gold-dark: #A88060;
+  --text-dark: #2C1A20;
+  --text-mid: #5A3A42;
+  --text-light: #9B7080;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 16px 32px;
+  background: rgba(74, 26, 37, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.5px;
+  max-width: 280px;
+  line-height: 1.3;
+}
+
+.nav-brand span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: rgba(245,240,232,0.88);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* ===== HERO ===== */
+#hero {
+  height: 100vh;
+  min-height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(74,26,37,0.72), rgba(30,10,15,0.55));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 900px;
+}
+
+.hero-pretitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #F0C8A0;
+}
+
+.hero-tagline {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.22rem);
+  color: rgba(255,255,255,0.88);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  padding: 15px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 2px solid var(--primary);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 18px rgba(107,39,55,0.45);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(107,39,55,0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 15px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.75);
+  transition: background 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ===== SEÇÃO GENÉRICA ===== */
+section { padding: 90px 32px; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: var(--primary-dark);
+  line-height: 1.22;
+  margin-bottom: 16px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--gold));
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+
+/* ===== GALERIA ===== */
+#galeria {
+  background: var(--primary-dark);
+  padding: 80px 32px;
+}
+
+#galeria .section-title { color: var(--cream); }
+#galeria .section-label { color: var(--gold); }
+#galeria .section-divider { background: linear-gradient(90deg, var(--gold), var(--cream)); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.05); }
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(74,26,37,0.85));
+  color: var(--cream);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 28px 14px 12px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* ===== SOBRE ===== */
+#sobre { background: var(--cream); padding-top: 90px; }
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.sobre-text p {
+  font-size: 1.02rem;
+  color: var(--text-mid);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.sobre-text p:last-child { margin-bottom: 0; }
+
+.sobre-texto-destaque {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--primary);
+  border-left: 3px solid var(--gold);
+  padding-left: 18px;
+  margin: 24px 0;
+  line-height: 1.6;
+}
+
+.sobre-numeros {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.numero-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(107,39,55,0.09);
+  border-top: 3px solid var(--primary);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.numero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(107,39,55,0.15);
+}
+
+.numero-valor {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.numero-desc {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ===== SERVIÇOS ===== */
+#cardapio {
+  background: var(--primary-light);
+  padding: 90px 32px;
+}
+
+.servicos-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px;
+}
+
+.servicos-intro .section-divider { margin: 0 auto 40px; }
+
+.servicos-categoria-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(107,39,55,0.15);
+  font-style: italic;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 22px;
+  margin-bottom: 50px;
+}
+
+.servico-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 28px 26px;
+  box-shadow: 0 3px 18px rgba(107,39,55,0.08);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.servico-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(107,39,55,0.16);
+}
+
+.servico-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.servico-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.servico-desc {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.servico-preco {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 50px;
+}
+
+/* ===== AVALIAÇÕES ===== */
+#avaliacoes {
+  background: var(--primary-dark);
+  padding: 90px 32px;
+}
+
+.avaliacoes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.avaliacoes-header .section-title { color: var(--cream); }
+.avaliacoes-header .section-label { color: var(--gold); }
+.avaliacoes-header .section-divider {
+  background: linear-gradient(90deg, var(--gold), #F0C8A0);
+  margin: 0 auto 40px;
+}
+
+.nota-grande {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.estrelas-grandes {
+  font-size: 2rem;
+  color: #F0C030;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.avaliacoes-contagem {
+  font-size: 0.9rem;
+  color: rgba(245,240,232,0.65);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.depoimento-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,169,126,0.25);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.depoimento-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
+}
+
+.depoimento-estrelas {
+  color: #F0C030;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.depoimento-texto {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  font-style: italic;
+  color: rgba(245,240,232,0.9);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.depoimento-autor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.autor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.autor-info strong {
+  display: block;
+  color: var(--cream);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.autor-info span {
+  color: rgba(245,240,232,0.5);
+  font-size: 0.78rem;
+}
+
+/* ===== CONTATO ===== */
+#contato { background: var(--cream); padding: 90px 32px; }
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contato-info-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.contato-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contato-info-texto strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.contato-info-texto p, .contato-info-texto a {
+  font-size: 0.93rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.contato-info-texto a:hover { color: var(--primary); }
+
+.horarios-tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.horarios-tabela td {
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  border-bottom: 1px solid rgba(107,39,55,0.08);
+}
+
+.horarios-tabela td:first-child { font-weight: 600; color: var(--text-dark); }
+.horarios-tabela td:last-child { text-align: right; }
+
+.mapa-placeholder {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: 16px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  color: var(--cream);
+  box-shadow: 0 8px 32px rgba(107,39,55,0.2);
+}
+
+.mapa-placeholder .mapa-icon { font-size: 3.5rem; margin-bottom: 16px; }
+
+.mapa-placeholder h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--cream);
+}
+
+.mapa-placeholder p {
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.75);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.mapa-btn {
+  background: var(--gold);
+  color: var(--primary-dark);
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mapa-btn:hover {
+  background: #D4B98A;
+  transform: translateY(-2px);
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: var(--white);
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-top: 24px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+}
+
+.whatsapp-btn:hover {
+  background: #1EB85A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary-dark);
+  padding: 48px 32px 32px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--cream);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.footer-logo span { color: var(--gold); }
+
+.footer-sub {
+  font-size: 0.82rem;
+  color: rgba(245,240,232,0.55);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.footer-divider {
+  width: 80px;
+  height: 1px;
+  background: rgba(200,169,126,0.35);
+  margin: 24px auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.footer-links a {
+  color: rgba(245,240,232,0.6);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(245,240,232,0.38);
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { gap: 16px; width: 100%; }
+
+  section { padding: 60px 20px; }
+  #galeria { padding: 60px 20px; }
+  #avaliacoes { padding: 60px 20px; }
+  #contato { padding: 60px 20px; }
+
+  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+  .sobre-numeros { grid-template-columns: 1fr 1fr; }
+
+  .contato-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .depoimentos-grid { grid-template-columns: 1fr; }
+
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-outline { width: 100%; max-width: 300px; text-align: center; }
+
+  footer { padding: 40px 20px 28px; }
+}
+
+@media (max-width: 480px) {
+  .sobre-numeros { grid-template-columns: 1fr; }
+  .nota-grande { font-size: 4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <div class="nav-brand">
+    <span>Dra. Gabriella Carvalho</span><br>
+    Rejuvenescimento &amp; Harmonização
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">✦ Asa Sul · Brasília · DF ✦</span>
+    <h1 class="hero-title">
+      Clínica Estética<br>
+      <em>Dra. Gabriella Carvalho</em><br>
+      Rejuvenescimento &amp; Harmonização Facial
+    </h1>
+    <p class="hero-tagline">
+      Onde a ciência encontra a arte — sua beleza natural, elevada ao máximo esplendor
+    </p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5561991426053" class="btn-primary">Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section id="galeria">
+  <div class="container">
+    <span class="section-label">Nossa Clínica</span>
+    <h2 class="section-title" style="color:var(--cream);">Ambiente &amp; Resultados</h2>
+    <div class="section-divider" style="background:linear-gradient(90deg,var(--gold),#F0C8A0);margin-bottom:36px;"></div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Tratamento facial na clínica" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+        <div class="gallery-caption">Harmonização Facial</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80" alt="Procedimento estético" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+        <div class="gallery-caption">Procedimentos Avançados</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80" alt="Clínica estética moderna" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+        <div class="gallery-caption">Ambiente Exclusivo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <span class="section-label">Sobre a Clínica</span>
+        <h2 class="section-title">A Arte de Revelar<br>a Sua Melhor Versão</h2>
+        <div class="section-divider"></div>
+        <p>A <strong>Clínica Estética Dra. Gabriella Carvalho</strong> é referência em Brasília em procedimentos de rejuvenescimento e harmonização facial, oferecendo tratamentos de alta precisão com protocolos baseados nas mais recentes evidências científicas da medicina estética.</p>
+        <blockquote class="sobre-texto-destaque">
+          "Cada rosto conta uma história única. Nossa missão é realçar sua beleza natural com técnica, sensibilidade e resultados que respeitem sua essência."
+          <br><small style="font-size:0.82rem;color:var(--text-light);font-style:normal;">— Dra. Gabriella Carvalho</small>
+        </blockquote>
+        <p>Localizada no coração da Asa Sul, em Brasília, a clínica atende pacientes que buscam não apenas estética, mas bem-estar, autoestima e a segurança de estar nas mãos de uma profissional altamente capacitada e especializada.</p>
+        <p>Utilizamos produtos e equipamentos de máxima qualidade, em um ambiente acolhedor, discreto e projetado para proporcionar conforto e confiança em cada visita.</p>
+        <a href="https://wa.me/5561991426053" class="whatsapp-btn">
+          <span>💬</span> WhatsApp: (61) 99142-6053
+        </a>
+      </div>
+      <div>
+        <div class="sobre-numeros">
+          <div class="numero-card">
+            <div class="numero-valor">5.0</div>
+            <div class="numero-desc">★★★★★<br>Nota Google</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero-valor">7+</div>
+            <div class="numero-desc">Avaliações<br>Verificadas</div>
+          </div>
+          <div class="numero-card">
+            <div class="numero-valor">100%</div>
+            <div class="numero-desc">Satisfação<br>Garantida</div>
+          </div>
+          <div class="numero-
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/5561991426053" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
