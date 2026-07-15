@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perioclinic — Clínica Odontológica</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1A4B8C;
+  --primary-dark: #123366;
+  --primary-light: #E8F0FA;
+  --accent: #2ECC71;
+  --accent-dark: #27AE60;
+  --white: #FFFFFF;
+  --light-gray: #F4F7FB;
+  --text-dark: #1A2233;
+  --text-mid: #3D5166;
+  --text-light: #6B849A;
+  --gold: #F0B429;
+  --shadow: 0 4px 24px rgba(26,75,140,0.10);
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(18, 51, 102, 0.97);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+
+.nav-logo {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo span.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* ===== HERO ===== */
+#inicio {
+  height: 100vh;
+  min-height: 560px;
+  background-image: url("https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=85");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,30,70,0.72), rgba(10,30,70,0.50));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 760px;
+}
+
+.hero-pretitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.08);
+  padding: 6px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(46,204,113,0.4);
+}
+
+.hero-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.hero-tagline {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: rgba(255,255,255,0.88);
+  font-weight: 300;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(46,204,113,0.35);
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(46,204,113,0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border: 2px solid rgba(255,255,255,0.75);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  margin-top: 4px;
+}
+
+.hero-rating .stars { color: var(--gold); font-size: 1rem; }
+.hero-rating span { color: rgba(255,255,255,0.9); font-size: 0.88rem; font-weight: 600; }
+
+/* ===== SECTION SHARED ===== */
+section { padding: 80px 24px; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  background: rgba(46,204,113,0.12);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 900;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+/* ===== GALERIA ===== */
+#galeria {
+  background: var(--light-gray);
+  padding-top: 80px;
+}
+
+.galeria-header { text-align: center; margin-bottom: 36px; }
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(26,75,140,0.10);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img { transform: scale(1.04); }
+
+/* ===== SOBRE ===== */
+#sobre { background: var(--white); }
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.sobre-text p {
+  font-size: 1.05rem;
+  color: var(--text-mid);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+.sobre-list {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sobre-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.98rem;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+
+.sobre-list li::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sobre-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.num-card {
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.num-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,75,140,0.15); }
+
+.num-card .number {
+  font-family: 'Lato', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  display: block;
+}
+
+.num-card .num-label {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  font-weight: 600;
+  margin-top: 6px;
+  display: block;
+}
+
+/* ===== CARDÁPIO / SERVIÇOS ===== */
+#cardapio { background: var(--light-gray); }
+
+.cardapio-header { text-align: center; margin-bottom: 48px; }
+.cardapio-header .section-sub { margin: 0 auto; }
+
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+.esp-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.esp-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(26,75,140,0.16); }
+
+.esp-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.esp-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.esp-card p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
+.esp-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent-dark);
+  background: rgba(46,204,113,0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 4px;
+  align-self: flex-start;
+}
+
+/* ===== AVALIAÇÕES ===== */
+#avaliacoes { background: var(--primary-light); }
+
+.avaliacoes-header { text-align: center; margin-bottom: 48px; }
+
+.rating-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.rating-number {
+  font-family: 'Lato', sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.rating-stars-big {
+  font-size: 2.2rem;
+  color: var(--gold);
+  letter-spacing: 4px;
+}
+
+.rating-count {
+  font-size: 1rem;
+  color: var(--text-mid);
+  font-weight: 600;
+}
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 16px;
+}
+
+.dep-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.dep-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,75,140,0.14); }
+
+.dep-quote {
+  font-size: 3rem;
+  color: var(--primary-light);
+  font-family: 'Lato', sans-serif;
+  line-height: 1;
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  color: var(--primary);
+}
+
+.dep-text {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  margin-top: 28px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.dep-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dep-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  color: var(--white);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.dep-info .dep-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.dep-info .dep-stars {
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.dep-info .dep-date {
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+/* ===== CONTATO ===== */
+#contato { background: var(--white); }
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contato-info { display: flex; flex-direction: column; gap: 24px; }
+
+.contato-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contato-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background: var(--primary-light);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.contato-item-body h4 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.contato-item-body p, .contato-item-body a {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contato-item-body a:hover { color: var(--primary); }
+
+.horarios-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.horarios-table tr td {
+  padding: 8px 4px;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  border-bottom: 1px solid rgba(26,75,140,0.07);
+}
+
+.horarios-table tr td:first-child { font-weight: 700; color: var(--text-dark); }
+.horarios-table tr td:last-child { text-align: right; color: var(--primary); font-weight: 600; }
+
+.horarios-card {
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+.horarios-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge-open {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cta-card {
+  background: var(--primary);
+  border-radius: 16px;
+  padding: 32px 28px;
+  color: var(--white);
+  margin-top: 24px;
+  text-align: center;
+  box-shadow: 0 6px 28px rgba(26,75,140,0.22);
+}
+
+.cta-card h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.cta-card p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 20px;
+}
+
+.btn-cta-white {
+  display: inline-block;
+  background: var(--white);
+  color: var(--primary);
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-cta-white:hover { background: var(--accent); color: var(--white); transform: translateY(-2px); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary-dark);
+  padding: 40px 24px 28px;
+  text-align: center;
+}
+
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+
+.footer-logo {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.footer-logo span { color: var(--accent); }
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 0 0 20px;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-links { gap: 16px; width: 100%; justify-content: flex-start; }
+
+  .sobre-grid { grid-template-columns: 1fr; gap: 36px; }
+  .contato-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  .hero-buttons { flex-direction: column; align-items: center; }
+
+  .btn-primary, .btn-outline { width: 220px; text-align: center; }
+
+  section { padding: 60px 16px; }
+
+  .rating-number { font-size: 4rem; }
+}
+
+@media (max-width: 480px) {
+  .sobre-numbers { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .num-card .number { font-size: 2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <a href="#inicio" class="nav-logo">
+    <span class="dot"></span>Perioclinic
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#cardapio">Serviços</a></li>
+    <li><a href="#avaliacoes">Avaliações</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="inicio">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-pretitle">Águas Claras · Brasília · DF</span>
+    <h1 class="hero-title">Perio<span>clinic</span></h1>
+    <p class="hero-tagline">Sorrisos que transformam vidas — cuidado especializado com tecnologia avançada para a sua saúde bucal.</p>
+    <div class="hero-buttons">
+      <a href="#contato" class="btn-primary">Agendar Consulta</a>
+      <a href="#cardapio" class="btn-outline">Ver Especialidades</a>
+    </div>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span>
+      <span>5.0 — 109 avaliações no Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section id="galeria">
+  <div class="container">
+    <div class="galeria-header">
+      <span class="section-label">Nossa Clínica</span>
+      <h2 class="section-title">Ambiente Moderno e Acolhedor</h2>
+      <p class="section-sub" style="margin:0 auto;">Estrutura completa pensada para oferecer conforto, higiene e excelência em cada detalhe do atendimento.</p>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Consultório odontológico moderno" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Recepção da clínica" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+      <div class="galeria-item">
+        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Equipamentos odontológicos" style="width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-text">
+        <span class="section-label">Quem Somos</span>
+        <h2 class="section-title">Referência em Saúde Bucal em Brasília</h2>
+        <p>A Perioclinic é uma clínica odontológica especializada, localizada no Águas Claras Shopping, no coração de Brasília. Nosso compromisso é oferecer tratamentos de alta qualidade com atenção personalizada para cada paciente.</p>
+        <p>Com uma equipe de cirurgiões-dentistas altamente qualificados e equipamentos de última geração, garantimos diagnósticos precisos e procedimentos seguros e eficientes para toda a família.</p>
+        <ul class="sobre-list">
+          <li>Equipe especializada e atualizada</li>
+          <li>Tecnologia digital avançada</li>
+          <li>Ambiente esterilizado e seguro</li>
+          <li>Atendimento humanizado e individualizado</li>
+          <li>Convênios e parcelamento facilitado</li>
+        </ul>
+      </div>
+      <div class="sobre-numbers">
+        <div class="num-card">
+          <span class="number">5.0</span>
+          <span class="num-label">Nota no Google</span>
+        </div>
+        <div class="num-card">
+          <span class="number">109+</span>
+          <span class="num-label">Avaliações</span>
+        </div>
+        <div class="num-card">
+          <span class="number">10+</span>
+          <span class="num-label">Especialidades</span>
+        </div>
+        <div class="num-card">
+          <span class="number">100%</span>
+          <span class="num-label">Satisfação</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="cardapio">
+  <div class="container">
+    <div class="cardapio-header">
+      <span class="section-label">Especialidades</span>
+      <h2 class="section-title">Tratamentos Completos para o seu Sorriso</h2>
+      <p class="section-sub">Oferecemos uma gama completa de tratamentos odontológicos com tecnologia de ponta e profissionais especializados.</p>
+    </div>
+    <div class="especialidades-grid">
+
+      <div class="esp-card">
+        <div class="esp-icon">🦷</div>
+        <h3>Periodontia</h3>
+        <p>Especialidade que cuida da saúde das gengivas e dos tecidos de suporte dos dentes. Tratamento de gengivite, periodontite e cirurgias periodontais com precisão.</p>
+        <span class="esp-badge">Especialidade Principal</span>
+      </div>
+
+      <div class="esp-card">
+        <div class="esp-icon">✨</div>
+        <h3>Implantodontia</h3>
+        <p>Implantes dentários de titânio que substituem dentes perdidos com naturalidade e durabilidade, devolvendo função e estética ao sorriso.</p>
+        <span class="esp-badge">Alta Demanda
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/556133996736" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
