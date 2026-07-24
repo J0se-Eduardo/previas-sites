@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabor da Serra Restaurante</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: rgba(30,30,30,1); background: rgba(255,255,255,1); }
+a { text-decoration:none; color:inherit; }
+.navbar { position:fixed; top:0; left:0; width:100%; z-index:100; padding:16px 32px; background: rgba(20,30,45,0.95); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+.navbar .logo { color: rgba(255,255,255,1); font-weight:bold; font-size:1.25rem; }
+.navbar nav a { color: rgba(255,255,255,0.9); margin-left:20px; font-size:0.95rem; }
+.hero { position:relative; height:100vh; min-height:480px; display:flex; align-items:center; justify-content:center; flex-direction:column; text-align:center; padding:0 20px; }
+.hero-overlay { position:absolute; inset:0; background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.45)); }
+.hero-conteudo { position:relative; z-index:2; color: rgba(255,255,255,1); }
+.hero-conteudo .pre { letter-spacing:3px; font-size:0.85rem; text-transform:uppercase; margin-bottom:12px; }
+.hero-conteudo h1 { font-size:3rem; margin-bottom:16px; }
+.hero-conteudo p { font-size:1.1rem; margin-bottom:28px; }
+.hero-botoes a { display:inline-block; padding:14px 28px; border-radius:6px; font-weight:600; margin:6px; }
+.btn-primario { background: rgba(201,162,75,1); color: rgba(20,20,20,1); }
+.btn-secundario { border:2px solid rgba(255,255,255,1); color: rgba(255,255,255,1); }
+section { padding:80px 24px; max-width:1200px; margin:0 auto; }
+.galeria { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:12px; }
+.galeria img { width:100%; height:220px; object-fit:cover; border-radius:8px; display:block; transition:transform 0.3s ease; }
+.galeria img:hover { transform:scale(1.03); }
+.sobre { display:flex; flex-wrap:wrap; gap:40px; align-items:center; }
+.sobre .texto { flex:1; min-width:260px; }
+.sobre .numeros { flex:1; min-width:260px; display:flex; gap:24px; flex-wrap:wrap; }
+.numero { text-align:center; }
+.numero .valor { font-size:2.2rem; font-weight:bold; }
+.servicos-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; margin-top:32px; }
+.card { padding:24px; border-radius:12px; background: rgba(240,240,240,1); box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+.avaliacoes { background: rgba(20,30,45,0.06); text-align:center; }
+.nota-grande { font-size:4rem; font-weight:bold; }
+.estrelas { color: rgba(201,162,75,1); font-size:1.5rem; }
+.depoimentos { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:32px; }
+.depoimento { background: rgba(255,255,255,1); padding:24px; border-radius:12px; max-width:320px; box-shadow:0 2px 8px rgba(0,0,0,0.08); text-align:left; }
+footer { background: rgba(20,20,20,1); color: rgba(255,255,255,0.8); text-align:center; padding:32px 20px; }
+@media (max-width: 768px) {
+  .navbar { flex-direction:column; align-items:flex-start; }
+  .navbar nav { display:flex; flex-direction:column; margin-top:8px; }
+  .navbar nav a { margin:4px 0 4px 0; }
+  .hero-conteudo h1 { font-size:2.2rem; }
+  section { padding:56px 16px; }
+  .sobre { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+  <div class="logo">Sabor da Serra Restaurante</div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</div>
+
+<div id="inicio" class="hero" style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format');background-size:cover;background-position:center;">
+  <div class="hero-overlay"></div>
+  <div class="hero-conteudo">
+    <div class="pre">BRASÍLIA</div>
+    <h1>Sabor da Serra Restaurante</h1>
+    <p>restaurante — atendimento em SHCS Quadra 405 Bloco A, Asa Sul, Brasília - DF</p>
+    <div class="hero-botoes">
+      <a class="btn-primario" href="https://wa.me/556133451122">Falar agora</a>
+      <a class="btn-secundario" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+</div>
+
+<section id="galeria" style="padding-top:80px;">
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format" alt="Foto 1" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format" alt="Foto 2" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1497366811353-92e0d6d94c98?w=800&auto=format" alt="Foto 3" loading="lazy">
+  </div>
+</section>
+
+<section id="sobre" class="sobre">
+  <div class="texto">
+    <h2>Sobre</h2>
+    <p>Sabor da Serra Restaurante atua no segmento de restaurante em Brasília, com atendimento dedicado e foco em resultado para cada cliente.</p>
+  </div>
+  <div class="numeros">
+    <div class="numero"><div class="valor">4.6★</div><div>Avaliação Google</div></div>
+    <div class="numero"><div class="valor">387</div><div>Avaliações</div></div>
+  </div>
+</section>
+
+<section id="servicos">
+  <h2>Serviços</h2>
+  <div class="servicos-grid">
+    <div class="card"><h3>Atendimento personalizado</h3><p>Soluções sob medida para o seu caso.</p></div>
+    <div class="card"><h3>Agendamento facilitado</h3><p>Marque seu horário sem complicação.</p></div>
+    <div class="card"><h3>Acompanhamento próximo</h3><p>Suporte em cada etapa do atendimento.</p></div>
+    <div class="card"><h3>Experiência</h3><p>Anos de atuação no mercado de Brasília.</p></div>
+    <div class="card"><h3>Localização</h3><p>SHCS Quadra 405 Bloco A, Asa Sul, Brasília - DF</p></div>
+    <div class="card"><h3>Contato direto</h3><p>Fale agora mesmo pelo WhatsApp.</p></div>
+  </div>
+</section>
+
+<section id="avaliacoes" class="avaliacoes">
+  <h2>Avaliações</h2>
+  <div class="nota-grande">4.6</div>
+  <div class="estrelas">★★★★⯨</div>
+  <p>387 avaliações no Google</p>
+  <div class="depoimentos">
+    <div class="depoimento"><strong>Mariana Souza</strong><br>★★★★★<br>Atendimento excelente, super recomendo!</div>
+    <div class="depoimento"><strong>Carlos Andrade</strong><br>★★★★★<br>Profissionalismo do início ao fim.</div>
+  </div>
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <p>Endereço: SHCS Quadra 405 Bloco A, Asa Sul, Brasília - DF</p>
+  <p>Telefone: 6133451122</p>
+  <p>Horário: Seg a Sáb, 8h às 18h</p>
+</section>
+
+<footer>
+  &copy; 2026 Sabor da Serra Restaurante — Todos os direitos reservados
+</footer>
+
+<!-- WhatsApp flutuante injetado -->
+<a href="https://wa.me/556133451122" title="Falar no WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9998;width:56px;height:56px;
+          border-radius:50%;background:#25D366;display:flex;align-items:center;
+          justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.25c-.073.262.162.497.424.424l5.392-1.475A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.96 0-3.8-.538-5.372-1.472l-.384-.228-3.985 1.09 1.09-3.985-.228-.384A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
+<!-- Marca d'agua injetada -->
+<div style="position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;
+            z-index:9999;overflow:hidden;transform:rotate(-35deg);display:flex;
+            flex-direction:column;gap:80px;justify-content:center;">
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+<div style="white-space:nowrap;opacity:0.04;font-size:0.75rem;color:#000;letter-spacing:3px;font-family:sans-serif;user-select:none;padding:4px 0;">Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535      Desenvolvido por José Eduardo | (61) 99501-3535</div>
+</div>
+</body>
+</html>
